@@ -3,6 +3,7 @@ package ru.lavrent.weblab4api.modules.hits.dto;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
 
 public class HitCreateRequest {
   @NotNull
@@ -16,7 +17,8 @@ public class HitCreateRequest {
   private Float y;
 
   @NotNull
-  @Min(1)
+  @Positive
+  @Min(0)
   @Max(4)
   private Float r;
 

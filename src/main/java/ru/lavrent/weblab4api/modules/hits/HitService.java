@@ -15,7 +15,7 @@ public class HitService {
 
   private boolean calculateHit(float x, float y, float r) {
     boolean square = (x >= 0 && y <= 0) && (x <= r && y >= -r);
-    boolean circle = (x >= 0 && y >= 0) && (x * x + y * y <= r * r);
+    boolean circle = (x >= 0 && y >= 0) && (x * x + y * y <= r / 2 * r / 2);
     boolean triangle = (x <= 0 && y <= 0) && (x >= -y - r);
 
     return square || circle || triangle;
@@ -27,7 +27,7 @@ public class HitService {
     hit.setY(y);
     hit.setR(r);
     hit.setCreatedAt(new Date());
-    hit.setHit(calculateHit(x, y, r));
+    hit.setIsHit(calculateHit(x, y, r));
     System.out.println("saving hit: " + hit);
     return hitRepository.save(hit);
   }

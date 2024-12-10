@@ -37,7 +37,7 @@ public class Hit {
     return createdAt;
   }
 
-  public boolean isHit() {
+  public boolean getIsHit() {
     return isHit;
   }
 
@@ -61,7 +61,7 @@ public class Hit {
     this.createdAt = createdAt;
   }
 
-  public void setHit(boolean isHit) {
+  public void setIsHit(boolean isHit) {
     this.isHit = isHit;
   }
 

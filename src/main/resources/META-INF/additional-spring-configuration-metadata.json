@@ -1,0 +1,9 @@
+{
+  "properties": [
+    {
+      "name": "custom.client.url",
+      "type": "java.lang.String",
+      "description": "Client's URL."
+    }
+  ]
+}

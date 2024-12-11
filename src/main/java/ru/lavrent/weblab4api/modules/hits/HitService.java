@@ -14,11 +14,11 @@ public class HitService {
   }
 
   private boolean calculateHit(float x, float y, float r) {
-    boolean square = (x >= 0 && y <= 0) && (x <= r && y >= -r);
+    boolean rectangle = (x >= 0 && y <= 0) && (x <= r && y >= -r / 2);
     boolean circle = (x >= 0 && y >= 0) && (x * x + y * y <= r / 2 * r / 2);
     boolean triangle = (x <= 0 && y <= 0) && (x >= -y - r);
 
-    return square || circle || triangle;
+    return rectangle || circle || triangle;
   }
 
   public Hit createHit(float x, float y, float r) {

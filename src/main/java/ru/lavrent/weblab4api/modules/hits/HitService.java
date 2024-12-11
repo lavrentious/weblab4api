@@ -40,4 +40,12 @@ public class HitService {
     return hitRepository.findById(id)
         .orElseThrow(() -> new RuntimeException("Hit not found with id: " + id));
   }
+
+  public void deleteHit(Long id) {
+    hitRepository.deleteById(id);
+  }
+
+  public void deleteAll() {
+    hitRepository.deleteAll();
+  }
 }
